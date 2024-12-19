@@ -35,8 +35,6 @@ fig <- plot_ly(long_data,
                color = ~country,
                type = 'scatter',
                mode = 'lines')
-
-# Show the plot
 fig
 
 # Ověříme, zda průměrná porodnost v roce 2021 má normální rozdělení po celém světě pomocí Shapiro-Wilkova testu.
@@ -50,7 +48,6 @@ children2021 <- sort(children2021)
 shapiro_test <- shapiro.test(children2021)
 
 print("Shapiro test results")
-# View the test results
 shapiro_test
 
 # p-hodnota je 1e-12, takže nulová hypotéza je zamítnuta, což znamená, že data nepocházejí z normálního rozdělení.
@@ -74,7 +71,7 @@ shapiro_test_eu
 
 # p-hodnota je mnohem vyšší než 0.05, takže data mohou pocházet z normálního rozdělení.
 
-t_test <- t.test(children2021_eu, mu = 2.0)  # Example for one-sample test
+t_test <- t.test(children2021_eu, mu = 2.0)
 t_test
 
 # Podívejme se na průměrnou hodnotu plodnosti z průměrů na zemi v Evropě a na směrodatnou odchylku:
@@ -82,20 +79,6 @@ mean_value <- mean(children2021_eu)
 sd_value <- sd(children2021_eu)
 mean_value
 sd_value
-
-
-
-
-
-
-
-
-
-
-
-
-# print(colnames(actual_data))
-# print(actual_data)
 
 
 
